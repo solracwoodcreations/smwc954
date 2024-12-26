@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+margin: 0;
+padding: 0;
     box-sizing: border-box;
 }
 
@@ -11,8 +11,10 @@ body {
 }
 
 header {
-    background-color: rgb(240, 175, 227);
-    color: #470aee;
+    margin: 0;
+
+    background-color: rgb(247, 212, 243);
+    color: rgb(233, 126, 186);
     padding: 1em;
     
     
@@ -25,7 +27,7 @@ h1 {
 }
 
 header nav a {
-    color: #fff;
+    color: rgb(233, 126, 186);
     margin: 0 1em;
     text-decoration: none;
     text-align: left;
@@ -59,7 +61,7 @@ article, .video {
         background-image: url("images/ .png");
         background-size: cover;
         background-position: center;
-        color: #e00e0e;
+        color: rgb(233, 126, 186);
         padding: 2em;
         text-align: center;
     }
