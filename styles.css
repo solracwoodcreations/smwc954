@@ -13,8 +13,8 @@ body {
 header {
     margin: 0;
 
-    background-color: rgb(247, 212, 243);
-    color: rgb(233, 126, 186);
+    background-color: rgb(252, 171, 244);
+    color: rgb(240, 63, 164);
     padding: 1em;
     
     
@@ -27,7 +27,7 @@ h1 {
 }
 
 header nav a {
-    color: rgb(233, 126, 186);
+    color: rgb(240, 63, 164);
     margin: 0 1em;
     text-decoration: none;
     text-align: left;
@@ -61,7 +61,7 @@ article, .video {
         background-image: url("images/ .png");
         background-size: cover;
         background-position: center;
-        color: rgb(233, 126, 186);
+        color: rgb(240, 63, 164);
         padding: 2em;
         text-align: center;
     }
