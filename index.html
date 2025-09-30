@@ -3,30 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday China!</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="card-container">
-        <div class="card">
-            <!-- Front of the card -->
-            <div class="card-front">
-                <div class="glowing-text">Happy Birthday China!</div>
-                <button id="open-card-btn" class="open-card-btn">Click to open</button>
-            </div>
 
-            <!-- Back of the card (hidden initially) -->
-            <div class="card-back">
-                <p>Wishing you the happiest of birthdays! Hope your day is filled with joy, laughter, and all your favorite things.</p>
-                <div class="signature">- Love Carlos</div>
+    <div class="card-container js-card-opener">
+        <div class="card">
+            <div class="front">
+                <div class="header">
+                    <p>Click me!</p>
+                </div>
+                <h1>Happy<br>Birthday!</h1>
+            </div>
+            <div class="back">
+                <div class="message">
+                    <p>Wishing you a day filled with happiness and a year filled with joy!</p>
+                    <p class="signature">- Best wishes</p>
+                </div>
             </div>
         </div>
     </div>
 
+    <div class="confetti-container" aria-hidden="true"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+ 
 
 
 
