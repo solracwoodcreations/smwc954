@@ -49,6 +49,7 @@ body {
 }
 
 .card-front h1 {
+    font-family: 'Dancing Script', cursive;
     font-size: 3em;
     margin-bottom: 15px;
     animation: glow 1.5s infinite alternate;
