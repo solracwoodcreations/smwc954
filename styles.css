@@ -1,122 +1,169 @@
+:root {
+    --card-size-mobile: 300px;
+    --card-size-desktop: 400px;
+    --main-bg-color: #fce4ec;
+    --card-bg-front: #ffb6c1;
+    --card-bg-back: #fff;
+    --text-color: #333;
+    --primary-color: #e91e63;
+    --confetti-color-1: #ff7675;
+    --confetti-color-2: #fd79a8;
+    --confetti-color-3: #ffeaa7;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: var(--main-bg-color);
+    font-family: 'Poppins', sans-serif;
+    perspective: 1000px;
+    transition: background-color 0.5s ease-in-out;
+    overflow: hidden;
     margin: 0;
-    background-color: #0d0d1a;
-    font-family: 'Pacifico', cursive; /* Use a festive Google Font */
-    color: #ffffff;
-    perspective: 1000px; /* Gives the 3D flip effect perspective */
 }
 
 .card-container {
-    width: 90%;
-    max-width: 500px;
-    height: 60vh;
-    max-height: 600px;
+    cursor: pointer;
+    width: var(--card-size-mobile);
+    height: calc(var(--card-size-mobile) * 1.4);
+    transform-style: preserve-3d;
+    transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
 }
 
 .card {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
-    transition: transform 1s;
     transform-style: preserve-3d;
+    transition: transform 1s;
 }
 
-.card-front,
-.card-back {
+.front, .back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    border-radius: 20px;
+}
+
+.front {
+    background: var(--card-bg-front);
+    color: #fff;
     text-align: center;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transform: rotateY(0deg);
 }
 
-.card-front {
-    background: linear-gradient(135deg, #ff4d4d, #ff804d);
+.front h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.card-back {
-    background: linear-gradient(135deg, #4dff88, #4d88ff);
+.front .header {
+    position: absolute;
+    top: 20px;
+    opacity: 0.8;
+    animation: bounce-text 1.5s infinite;
+}
+
+.back {
+    background: var(--card-bg-back);
+    color: var(--text-color);
+    text-align: center;
     transform: rotateY(180deg);
 }
 
-.card-flip .card {
-    transform: rotateY(180deg);
+.back .message {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    animation: fade-in 2s ease-out forwards;
+    opacity: 0;
 }
 
-.glowing-text {
-    font-size: 2.5rem;
-    text-shadow:
-        0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 30px #ff00de,
-        0 0 40px #ff00de,
-        0 0 50px #ff00de,
-        0 0 60px #ff00de,
-        0 0 70px #ff00de;
-    animation: glow 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00de;
-    }
-    to {
-        text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 60px #ff00de;
-    }
-}
-
-.open-card-btn {
+.back .signature {
     margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    color: #0d0d1a;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.open-card-btn:hover {
-    transform: scale(1.1);
-}
-
-.card-back p {
-    font-size: 1.5rem;
-    line-height: 1.5;
-}
-
-.signature {
-    margin-top: 30px;
-    font-size: 1.2rem;
     font-style: italic;
 }
 
-/* Make responsive for smaller screens */
-@media (max-width: 600px) {
-    .glowing-text {
-        font-size: 2rem;
+/* Confetti Effect */
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--confetti-color-1);
+    border-radius: 50%;
+    opacity: 0;
+    animation: confetti-fall 3s ease-out forwards;
+}
+
+/* Animations */
+@keyframes bounce-text {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes confetti-fall {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+    100% { transform: translate(var(--x), var(--y)) rotate(var(--deg)); opacity: 0; }
+}
+
+/* Clicked state */
+.card-container.open .card {
+    transform: rotateY(180deg);
+}
+.card-container.open .front .header {
+    animation: none;
+    opacity: 0;
+}
+
+/* Media Queries for responsiveness */
+@media (min-width: 768px) {
+    .card-container {
+        width: var(--card-size-desktop);
+        height: calc(var(--card-size-desktop) * 1.4);
     }
-    .card-back p {
-        font-size: 1.2rem;
+    .front h1 {
+        font-size: 4.5rem;
     }
-    .signature {
-        font-size: 1rem;
+    .back .message {
+        font-size: 1.25rem;
     }
 }
+
+
+
+
+
+
+ 
+
 
 
 
