@@ -4,19 +4,29 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #0d0d1a;
+    font-family: 'Pacifico', cursive; /* Use a festive Google Font */
+    color: #ffffff;
+    perspective: 1000px; /* Gives the 3D flip effect perspective */
+}
+
+.card-container {
+    width: 90%;
+    max-width: 500px;
+    height: 60vh;
+    max-height: 600px;
 }
 
 .card {
-    margin: 0px;
-    width: 300px;
-    height: 400px;
-    perspective: 1000px; /* For 3D effect */
-    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
 }
 
-.front, .back {
+.card-front,
+.card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -25,56 +35,96 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.6s;
+    box-sizing: border-box;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-.front {
-    background-color: #ffcc00;
-    color: #333;
+.card-front {
+    background: linear-gradient(135deg, #ff4d4d, #ff804d);
 }
 
-.back {
-    background-color: #aaffaa;
-    color: #333;
-    transform: rotateY(180deg); /* Initially hidden */
+.card-back {
+    background: linear-gradient(135deg, #4dff88, #4d88ff);
+    transform: rotateY(180deg);
 }
 
-.card.flipped .front {
-    transform: rotateY(-180deg);
+.card-flip .card {
+    transform: rotateY(180deg);
 }
 
-.card.flipped .back {
-    transform: rotateY(0deg);
+.glowing-text {
+    font-size: 2.5rem;
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px #ff00de,
+        0 0 40px #ff00de,
+        0 0 50px #ff00de,
+        0 0 60px #ff00de,
+        0 0 70px #ff00de;
+    animation: glow 1.5s ease-in-out infinite alternate;
 }
 
-.hidden {
-    display: none; /* Used to initially hide the back content */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00de;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 60px #ff00de;
+    }
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
+.open-card-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #0d0d1a;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
+.open-card-btn:hover {
+    transform: scale(1.1);
 }
 
-p {
-    font-size: 1.1em;
+.card-back p {
+    font-size: 1.5rem;
     line-height: 1.5;
 }
 
 .signature {
-    margin-top: 20px;
+    margin-top: 30px;
+    font-size: 1.2rem;
     font-style: italic;
-    font-size: 0.9em;
 }
+
+/* Make responsive for smaller screens */
+@media (max-width: 600px) {
+    .glowing-text {
+        font-size: 2rem;
+    }
+    .card-back p {
+        font-size: 1.2rem;
+    }
+    .signature {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+ 
 
 
 
