@@ -4,23 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday!</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="card" id="birthdayCard">
-        <div class="front">
-            <h1>Happy Birthday!</h1>
-            <p>Click to open your card!</p>
-        </div>
-        <div class="back hidden">
-            <h2>Happy Birthday China!</h2>
-            <p>May your day be filled with joy, laughter, and all your favorite things!</p>
-            <p class="signature">- with much love your brother Carlos</p>
+    <div class="card-container">
+        <div class="card">
+            <!-- Front of the card -->
+            <div class="card-front">
+                <div class="glowing-text">Happy Birthday!</div>
+                <button id="open-card-btn" class="open-card-btn">Click to open</button>
+            </div>
+
+            <!-- Back of the card (hidden initially) -->
+            <div class="card-back">
+                <p>Wishing you the happiest of birthdays! Hope your day is filled with joy, laughter, and all your favorite things.</p>
+                <div class="signature">- Your Name</div>
+            </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+ 
 
 
 
