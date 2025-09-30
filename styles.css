@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background-color: black;
     overflow: hidden;
 }
 
@@ -61,7 +61,7 @@ body {
 
 .card-back {
     background: linear-gradient(45deg, #84fab0, #8fd3f4);
-    color: #333;
+    color: white;
     transform: rotateY(180deg);
 }
 
