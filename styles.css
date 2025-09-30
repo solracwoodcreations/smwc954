@@ -9,6 +9,7 @@ body {
 }
 
 .card {
+    margin: 0px;
     width: 300px;
     height: 400px;
     perspective: 1000px; /* For 3D effect */
