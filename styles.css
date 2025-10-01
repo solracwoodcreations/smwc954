@@ -129,8 +129,8 @@ body {
 }
 
 .responsive-img {
-    max-width: 75%;
-    height: auto;
+    width: 200px;
+    height: 200px;
     margin-top: 1rem;
     border-radius: 8px;
 }
