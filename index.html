@@ -3,26 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday China!</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Wander Brew | Your Mobile Coffee Fix</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="card-container">
-        <div class="card">
-            <div class="card-front">
-                <h1>Happy Birthday China!</h1>
-                <p>Click to open!</p>
-            </div>
-            <div class="card-back">
-                <h2>Wishing you a fantastic day!</h2>
-                <p>Have as great of a day as you are a great sister. I love you so much. May all your wishes come true, your bro Carlos</p>
-                <div class="confetti-container"></div>
-            </div>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="#" class="logo">Wander Brew</a>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-    </div>
+        <nav class="main-nav" id="mobile-nav">
+            <ul class="nav-list">
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#location">Find Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>Artisanal coffee on the go.</h1>
+            <p>Serving up delicious, hand-crafted brews wherever you are.</p>
+            <a href="#menu" class="cta-button">View Our Menu</a>
+        </section>
+
+        <section id="about" class="about-section content-block">
+            <h2>Our Story</h2>
+            <img src="coffee-truck-image.jpg" alt="Our Wander Brew truck" class="responsive-img">
+            <p>From a simple idea to a mobile sensation, Wander Brew was created to bring high-quality coffee directly to the people. We believe great coffee should be accessible, no matter where your day takes you.</p>
+        </section>
+
+        <section id="menu" class="menu-section content-block">
+            <h2>Our Menu</h2>
+            <div class="menu-item-list">
+                <!-- Coffee items will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <section id="location" class="location-section content-block">
+            <h2>Where to Find Us</h2>
+            <p id="todays-location">Check back for today's location!</p>
+            <a href="#" id="live-map-link" class="cta-button">See Our Live Map</a>
+        </section>
+
+        <section id="contact" class="contact-section content-block">
+            <h2>Get in Touch</h2>
+            <p>Have a question or want to book us for an event? Send us a message!</p>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta-button">Send</button>
+            </form>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Wander Brew. All rights reserved.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+ 
 
 
 
