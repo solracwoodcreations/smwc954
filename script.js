@@ -1,86 +1,80 @@
-const track = document.querySelector('.carousel-track');
-const slides = Array.from(track.children);
-const nextButton = document.querySelector('.carousel-button.next');
-const prevButton = document.querySelector('.carousel-button.prev');
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+    const nextButton = document.querySelector('.carousel-button.next');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const indicatorsContainer = document.querySelector('.carousel-indicators');
 
-let currentSlide = 0;
-const totalSlides = slides.length;
+    let currentSlideIndex = 0;
 
-function updateSlide(position) {
-  track.style.transform = `translateX(-${position * 100}%)`;
-}
+    // Generate indicators dynamically based on the number of slides
+    slides.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.classList.add('indicator');
+        indicator.addEventListener('click', () => moveToSlide(index));
+        indicatorsContainer.appendChild(indicator);
+    });
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  updateSlide(currentSlide);
-}
+    const indicators = Array.from(indicatorsContainer.querySelectorAll('.indicator'));
 
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  updateSlide(currentSlide);
-}
+    const updateCarousel = () => {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        track.scrollLeft = slideWidth * currentSlideIndex;
+        updateIndicators();
+    };
 
-// Button event listeners
-nextButton.addEventListener('click', nextSlide);
-prevButton.addEventListener('click', prevSlide);
+    const updateIndicators = () => {
+        indicators.forEach((indicator, index) => {
+            if (index === currentSlideIndex) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+    };
 
-// Auto-slide (optional)
-let autoSlide = true;
-let slideInterval;
+    const moveToSlide = (targetIndex) => {
+        currentSlideIndex = targetIndex;
+        updateCarousel();
+    };
 
-function startAutoSlide() {
-  slideInterval = setInterval(nextSlide, 4000);
-}
+    nextButton.addEventListener('click', () => {
+        if (currentSlideIndex < slides.length - 1) {
+            moveToSlide(currentSlideIndex + 1);
+        } else {
+            moveToSlide(0); // Loop to the beginning
+        }
+    });
 
-function stopAutoSlide() {
-  clearInterval(slideInterval);
-}
+    prevButton.addEventListener('click', () => {
+        if (currentSlideIndex > 0) {
+            moveToSlide(currentSlideIndex - 1);
+        } else {
+            moveToSlide(slides.length - 1); // Loop to the end
+        }
+    });
+    
+    // Listen for manual scrolling to update indicators
+    track.addEventListener('scroll', () => {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        const scrollPosition = track.scrollLeft;
+        const newIndex = Math.round(scrollPosition / slideWidth);
+        if (newIndex !== currentSlideIndex) {
+            currentSlideIndex = newIndex;
+            updateIndicators();
+        }
+    });
 
-if (autoSlide) {
-  startAutoSlide();
-  track.addEventListener('mouseenter', stopAutoSlide);
-  track.addEventListener('mouseleave', startAutoSlide);
-}
-
-// --- Touch swipe support ---
-let startX = 0;
-let isSwiping = false;
-
-track.addEventListener('touchstart', (e) => {
-  startX = e.touches[0].clientX;
-  isSwiping = true;
-
-  // Stop auto-slide during touch
-  if (autoSlide) stopAutoSlide();
-}, { passive: true });
-
-track.addEventListener('touchmove', (e) => {
-  if (!isSwiping) return;
-
-  const currentX = e.touches[0].clientX;
-  const diffX = currentX - startX;
-
-  // Optional: prevent accidental scroll
-  if (Math.abs(diffX) > 10) e.preventDefault();
-}, { passive: false });
-
-track.addEventListener('touchend', (e) => {
-  if (!isSwiping) return;
-
-  const endX = e.changedTouches[0].clientX;
-  const diffX = endX - startX;
-
-  if (diffX > 50) {
-    prevSlide(); // swipe right
-  } else if (diffX < -50) {
-    nextSlide(); // swipe left
-  }
-
-  isSwiping = false;
-
-  // Restart auto-slide
-  if (autoSlide) startAutoSlide();
+    // Initialize the carousel
+    updateCarousel();
 });
+
+
+
+
+
+
+ 
 
 
 
