@@ -1,13 +1,31 @@
-/* Basic mobile-first styling */
-body {
-    font-family: sans-serif;
-    margin: 20px;
+* {
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-decoration: none;
+    margin: 0;
+    padding-top: 70px;
+    min-height: 100vh;
+    background-image: url("");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+
+/* Basic mobile-first styling 
+    font-family: sans-serif;
+    
+
     background-color: #f0f2f5;
     display: block;
     justify-content: center;
     align-items: center;
-    min-height: 50vh;
+    */
 }
 
 nav {
