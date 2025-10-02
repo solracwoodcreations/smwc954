@@ -1,81 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticking Bean | Your Mobile Coffee Fix</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photo Carousel</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-content">
-            <a href="#" class="logo">Ticking Bean</a>
-            <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <nav class="main-nav" id="mobile-nav">
-            <ul class="nav-list">
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#location">Find Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section class="hero-section">
-            <h1>Artisanal coffee on the go.</h1>
-            <p>Serving up delicious, hand-crafted brews wherever you are.</p>
-            <a href="#menu" class="cta-button">View Our Menu</a>
-        </section>
+<div class="carousel">
+  <div class="carousel-track">
+    <img src="https://via.placeholder.com/800x400?text=Slide+1" alt="Slide 1" class="carousel-slide">
+    <img src="https://via.placeholder.com/800x400?text=Slide+2" alt="Slide 2" class="carousel-slide">
+    <img src="https://via.placeholder.com/800x400?text=Slide+3" alt="Slide 3" class="carousel-slide">
+  </div>
+  <button class="carousel-button prev">&#10094;</button>
+  <button class="carousel-button next">&#10095;</button>
+</div>
 
-        <section id="about" class="about-section content-block">
-            <h2>Our Story</h2>
-            <img src="images/IMG_4324.jpeg" alt="Our Ticking Bean truck" class="responsive-img">
-            <p>From a simple idea to a mobile sensation, Ticking Bean was created to bring high-quality coffee directly to the people. We believe great coffee should be accessible, no matter where your day takes you.</p>
-        </section>
-
-        <section id="menu" class="menu-section content-block">
-            <h2>Our Menu</h2>
-            <div class="menu-item-list">
-                <!-- Coffee items will be loaded here by JavaScript -->
-            </div>
-        </section>
-
-        <section id="location" class="location-section content-block">
-            <h2>Where to Find Us</h2>
-            <p id="todays-location">Check back for today's location!</p>
-            <a href="#" id="live-map-link" class="cta-button">See Our Live Map</a>
-        </section>
-
-        <section id="contact" class="contact-section content-block">
-            <h2>Get in Touch</h2>
-            <p>Have a question or want to book us for an event? Send us a message!</p>
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="cta-button">Send</button>
-            </form>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <p>&copy; 2025 Ticking Bean. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
+
+
+
+ 
 
 
 
