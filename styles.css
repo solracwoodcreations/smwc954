@@ -8,14 +8,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 75vh;
   background-color: #f4f4f4;
   font-family: sans-serif;
 }
 
 .carousel {
   position: relative;
-  width: 80%;
+  width: 60%;
   max-width: 800px;
   overflow: hidden;
   border-radius: 10px;
