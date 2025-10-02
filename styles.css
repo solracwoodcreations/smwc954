@@ -1,7 +1,7 @@
 /* Basic mobile-first styling */
 body {
     font-family: sans-serif;
-    margin: 0;
+    margin: 20px;
     padding: 0;
     background-color: #f0f2f5;
     display: flex;
