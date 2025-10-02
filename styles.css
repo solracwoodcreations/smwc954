@@ -28,6 +28,12 @@ body {
     */
 }
 
+main {
+  width: 80%; /* Or any desired width */
+  margin: 0 auto;
+}
+
+
 nav {
     padding: 8px;
     position: fixed;
