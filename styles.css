@@ -38,7 +38,7 @@ body {
     justify-content: center;
     align-items: center;
    /* min-height: 100vh; */
-    margin: 0;
+    
     background: var(--bg-color);
     perspective: 1000px;
     overflow: auto;
