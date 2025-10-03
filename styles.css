@@ -13,7 +13,7 @@
 
 :root {
     
-    --card-width: 135px;
+    --card-width: 150px;
     --card-height: 250px;
     --primary-color: #ff69b4; /* Hot Pink */
     --secondary-color: #ffb6c1; /* Light Pink */
@@ -48,7 +48,7 @@ body {
 
 /* Birthday card */
 .card-container {
-    max-width: 60vw;
+    max-width: 58vw;
     width: 100%;
     height: auto;
     /*width: var(--card-width);
@@ -201,7 +201,7 @@ main {
 } */
 
 
-nav {
+/*nav {
     padding: 8px;
     position: fixed;
     color: black;
@@ -289,7 +289,7 @@ nav li:first-child {
         width: 41%;
         height: 50%;
     }
-}
+}*/
 
 img {
     border: 3px solid #333;
@@ -301,7 +301,7 @@ img {
 
 .carousel-container {
     position: relative;
-    max-width: 75vw;
+    max-width: 38vw;
     width: 100%;
     height: auto;
     overflow: hidden;
