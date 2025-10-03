@@ -32,7 +32,7 @@ body {
     text-decoration: none;
     padding-top: 70px;
     min-height: 100vh;
-    display: flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
