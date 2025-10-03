@@ -31,7 +31,7 @@
 body { 
     text-decoration: none;
     
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     display: inline-block;
     justify-content: center;
     align-items: center;
