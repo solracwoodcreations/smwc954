@@ -29,14 +29,17 @@
 
 
 
-body { 
+body {
+    display: flex;
+  flex-direction: column; /* Stacks the card and carousel vertically */
+  justify-content: center;
     
     text-decoration: none;
     
     /*min-height: 100vh;*/
-    display: inline-block;
     
-    align-items: center;
+    
+    
    /* min-height: 100vh; */
     
     background: var(--bg-color);
