@@ -39,7 +39,7 @@ body {
     margin: 0;
     background: var(--bg-color);
     perspective: 1000px;
-    overflow: hidden;
+    overflow: auto;
     font-family: 'Dancing Script', cursive;
 }
 
