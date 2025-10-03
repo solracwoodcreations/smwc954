@@ -12,8 +12,8 @@
     
 
 :root {
-    --card-width: 350px;
-    --card-height: 500px;
+    --card-width: 150px;
+    --card-height: 300px;
     --primary-color: #ff69b4; /* Hot Pink */
     --secondary-color: #ffb6c1; /* Light Pink */
     --font-color: #ffffff; /* White */
