@@ -12,6 +12,7 @@
     
 
 :root {
+    
     --card-width: 135px;
     --card-height: 250px;
     --primary-color: #ff69b4; /* Hot Pink */
@@ -46,8 +47,11 @@ body {
 
 /* Birthday card */
 .card-container {
-    width: var(--card-width);
-    height: var(--card-height);
+    max-width: 50vw;
+    width: 100%;
+    height: auto;
+    /*width: var(--card-width);
+    height: var(--card-height);*/
     position: relative;
     transform-style: preserve-3d;
     transition: transform 1s;
