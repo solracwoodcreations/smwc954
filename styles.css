@@ -51,7 +51,7 @@ body {
 
 /* Birthday card */
 .card-container {
-    display: flex;
+
     max-width: 80vw;
     width: 100%;
     height: 250px;
