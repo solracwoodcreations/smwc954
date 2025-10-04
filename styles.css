@@ -54,7 +54,7 @@ body {
     display: flex;
     max-width: 80vw;
     width: 100%;
-    height: auto;
+    height: 200px;
     /*width: var(--card-width);
     height: var(--card-height);*/
     position: relative;
