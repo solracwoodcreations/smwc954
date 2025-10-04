@@ -51,7 +51,7 @@ body {
 
 /* Birthday card */
 .card-container {
-    max-width: 80vw;
+    max-width: 60;
     width: 100%;
     height: auto;
     /*width: var(--card-width);
@@ -304,7 +304,7 @@ img {
 
 .carousel-container {
     position: relative;
-    max-width: 90vw;
+    max-width: 40vw;
     width: 100%;
     height: auto;
     overflow: hidden;
