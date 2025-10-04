@@ -304,7 +304,7 @@ img {
 
 .carousel-container {
     position: relative;
-    max-width: 40vw;
+    max-width: 60vw;
     width: 100%;
     height: auto;
     overflow: hidden;
