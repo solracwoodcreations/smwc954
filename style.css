@@ -527,6 +527,37 @@ main > p {
   border: none;
 }
 
+/* horizontal scroll container */
+.video-scroll {
+  display: flex;
+  gap: 16px;
+
+  overflow-x: auto;
+  padding: 20px 16px;
+
+  scroll-snap-type: x mandatory;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.video-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* each video item */
+.video-card {
+  flex: 0 0 80%;
+  scroll-snap-align: center;
+}
+
+/* label under video */
+.video-card p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+}
+
 /* feature video in featured card */
 .featured-media {
   display: flex;
