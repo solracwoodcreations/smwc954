@@ -14,15 +14,52 @@
 </head>
 
 <body>
+  <header>
 
 <!-- NAV -->
+  <nav>
+  <!-- Main Nav -->
+  <ul>
+    <li><a href="index.html">Opal Woodgrain</a></li>
 
-  <header class="nav">
+    <li class="hideOnMobile"><a href="abouts.html">About</a></li>
+    <li class="hideOnMobile"><a href="projects.html">Projects</a></li>
+    <li class="hideOnMobile"><a href="projects.html#cta">contact</a></li>
+    <li class="hideOnMobile"><a href="#contact">Socials</a></li>
+
+    <li class="menu-button">
+      <a class="icon-button bars" onclick="showSidebar()" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Sidebar -->
+  <ul class="sidebar" id="sidebarMenu">
+    <li>
+      <a class="icon-button xmark" onclick="hideSidebar()" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </a>
+    </li>
+
+    <li><a href="abouts.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="cart.html">Shop</a></li>
+    <li><a href="#contact">Socials</a></li>
+       <li><a href="#"></a></li>
+  </ul>
+</nav>
+
+         
+       
+    </header>
+
+ <!-- <header class="nav">
   <div class="logo">Opal Woodgrain</div>
   <button class="menu-btn" id="menuBtn">☰</button>
-</header>
+</header> -->
 
-<div class="backdrop" id="backdrop"></div>
+<!-- <div class="backdrop" id="backdrop"></div>
 
 <aside class="sidebar" id="sidebar">
   <button class="close-btn" id="closeBtn">✕</button>
@@ -31,7 +68,7 @@
   <a href="#gallery">Photos</a>
   <a href="#vlogs">Vlogs</a>
   <a href="#contact">Contact</a>
-</aside>
+</aside> -->
 
   
   
