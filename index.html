@@ -27,20 +27,48 @@
     <li class="hideOnMobile"><a href="projects.html#cta">contact</a></li>
     <li class="hideOnMobile"><a href="#contact">Socials</a></li>
 
+
     <li class="menu-button">
+  <button
+    class="icon-button bars"
+    onclick="showSidebar()"
+    aria-label="Open menu"
+    type="button"
+  >
+    <i class="fa-solid fa-bars"></i>
+  </button>
+</li>
+
+   <!-- <li class="menu-button">
       <a class="icon-button bars" onclick="showSidebar()" aria-label="Open menu">
         <i class="fa-solid fa-bars"></i>
       </a>
-    </li>
+    </li> -->
   </ul>
 
   <!-- Sidebar -->
   <ul class="sidebar" id="sidebarMenu">
+
+
+    <!-- new button style -->
     <li>
+  <button
+    class="icon-button xmark"
+    onclick="hideSidebar()"
+    aria-label="Close menu"
+    type="button"
+  >
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+</li>
+
+
+    <!-- old a href style -->
+    <!-- <li>
       <a class="icon-button xmark" onclick="hideSidebar()" aria-label="Close menu">
         <i class="fa-solid fa-xmark"></i>
       </a>
-    </li>
+    </li> -->
 
     <li><a href="abouts.html">About</a></li>
     <li><a href="projects.html">Projects</a></li>
