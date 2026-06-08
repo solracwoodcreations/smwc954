@@ -264,7 +264,7 @@ main > p {
 
   padding: 4rem 1.5rem;
 
-  background: url("images/bean.jpeg") center/cover no-repeat;
+  background: url("images/hero-clip.jpeg") center/cover no-repeat;
   position: relative;
 }
   .hero::before {
