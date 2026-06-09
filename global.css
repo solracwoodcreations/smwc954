@@ -1,0 +1,425 @@
+/* =========================
+   DESIGN TOKENS
+========================= */
+:root {
+  /* Background */
+  --color-bg: #E6DED6;
+
+  /* Text */
+  --color-text: #3b2a1f;
+  --color-text-light: #444444;
+  --color-heading: #3b2a1f;
+
+  /* Button */
+  --button-bg: #3b2a1f;
+  --button-text: #fff;
+
+
+  /* Accent */
+  --color-accent: #7b5e47;
+
+  /* Utilities */
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* sr only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================
+   buttons
+========================= */
+button {
+background: var(--button-bg);
+color: var(--button-text);
+text-decoration: none;
+border: none;
+border-radius: 999px;
+cursor: pointer;
+} 
+
+
+/* .signup-form button { */
+   /* background-color: #3b2a2f;
+   color: #fff; 
+  
+} */
+
+/* =========================
+   BASE TYPOGRAPHY
+========================= */
+body {
+ padding-top: env(safe-area-inset-top);
+ padding-bottom: env(safe-area-inset-bottom);
+ font-family: 'Inter', sans-serif;
+ background-color: var(--color-bg);
+ color: var(--color-text);
+ line-height: 1.5;
+}
+
+
+/* =========================
+        NAV SECTION
+========================= */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+  font-weight: ;
+  font-size: 1.25rem;
+} 
+
+nav ul {
+  display: flex;
+  width: 100%;
+  list-style: none;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1rem;
+}
+
+nav li:first-child {
+  margin-right: auto;
+}
+
+nav li {
+  height: 50px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: #3b2a1f;
+  cursor: pointer;
+   transition: color 0.3s ease, background-color 0.3s ease;
+  
+}
+ 
+
+nav a:hover {
+  color: #7b5e47;
+}
+
+
+nav button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* === ANIMATED SIDEBAR VERSION === */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  overflow-y: auto;
+  transform: translateX(100%);   /* Start hidden off-screen */
+  opacity: 0;                    /* Hidden visually */
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  pointer-events: none;/* Disable clicks when hidden */
+  
+}
+
+.sidebar.active {
+  transform: translateX(0);      /* Slide in */
+  opacity: 1;                    /* Fade in */
+  pointer-events: auto;           /* Enable clicks again */
+  
+}
+
+.sidebar li {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.sidebar a {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1.25rem;
+  color: #3b2a1f;
+}
+.sidebar a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+ 
+
+.menu-button button,
+.sidebar button {
+  appearance: none;
+  -webkit-appearance: none;
+
+  border: none;
+  background: transparent;
+}
+
+.menu-button button,
+.menu-button button i,
+.sidebar button,
+.sidebar button i {
+  color: inherit;
+  padding: 10px 20px;
+  font-size: 1.25rem;
+}
+
+ 
+
+ 
+
+/* Menu button for mobile */
+.menu-button {
+  display: none;
+  cursor: pointer;
+}
+
+/* Align the icon and text horizontally in nav */
+.menu-button button {
+  padding: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+}
+
+
+/* newsletter sign up button */
+/* .primary-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: #3b2a1f;
+  color: #fff;
+  border: none;
+  cursor: pointer; 
+} */
+
+
+ 
+
+  
+
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: var(--color-heading);
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+/* Paragraphs */
+ 
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+}
+
+
+ 
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* .icon-button {
+  text-decoration: none;
+} */
+
+/* =========================
+   SECTION BEHAVIOR
+========================= */
+section {
+  scroll-margin-top: 60px;
+}
+
+
+
+/* makes NAV look like desktop in landscape mode */
+@media (min-width: 768px) {
+
+  nav ul {
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .hideOnMobile {
+    display: inline-block;
+  }
+
+  .sidebar {
+    display: none !important;
+  }
+
+}
+
+
+/* === Materials & Tools: Technical Callout === */
+#materials h2 + ul {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.25rem 1.75rem;
+  background-color: #111;
+  color: #f2f2f2;
+  border: 2px dashed #cfa96b; /* workshop tag feel */
+  border-radius: 8px;
+  list-style: none;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Items */
+#materials h2 + ul li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Labels */
+#materials h2 + ul strong {
+  color: #cfa96b;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Section title: break narrative */
+#materials h2 {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #111;
+}
+
+/* Optional: subtle divider above */
+#materials h2::before {
+  content: "— SHOP NOTES —";
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: #888;
+  margin-bottom: 0.5rem;
+   
+}
+
+
+/* ======= destop tyles ===== */
+@media (min-width: 1024px) {
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+}
+
+/* JUST ADDED */
+@media (max-width: 768px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  nav ul {
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .sidebar {
+    display: none !important;
+  }
+}
+
